@@ -15,12 +15,4 @@ const server = express()
       //Ecrit dans la console lorsqu'un utilisateur se déconnecte
       console.log("un utilisateur s'est déconnecté");
     });
-
-    //Lors de l'evenement "chat message", le socket lance la fonction
-    socket.on('chat message', function(msg){
-      //Ecrit dans la console le msg
-      console.log(msg);
-      //Emet le msg de l'evenement "chat message" en broadcast (pas sur)
-      io.emit('chat message', msg);
-    });
   });
